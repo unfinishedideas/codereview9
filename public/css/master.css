@@ -1,0 +1,40 @@
+.top_bar {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 20px;
+}
+
+.jumbo {
+  background-color: rgb(50,50,50);
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-bottom: 1%;
+  border: 4px rgb(0,50,155) solid;
+  border-radius: 10px;
+}
+
+.container {
+  padding: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: 5%;
+  margin-top: 2%;
+  background-color: rgb(50,50,50);
+  border: 4px rgb(0,50,155) solid;
+  border-radius: 10px;
+}
+
+.txt_big {
+  text-align: center;
+  font-size: 50px;
+  text-shadow: 2px 2px 2px black;
+}
+
+body {
+  background-color: rgb(20,20,20);
+  color: rgb(255,150,0);
+}
+
+a {
+  color: white;
+}
