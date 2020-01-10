@@ -14,4 +14,8 @@ def save
   @id = result.first().fetch("id").to_i
 end
 
+def ==(other_project)
+  self.title().downcase.eql?(other_project.title().downcase())
+end
+
 end
