@@ -20,6 +20,7 @@
 <% else %>
 <p>There are currently no volunteers to display</p>
 <% end %>
+<a href="/projects/<%= @project.id  %>/add">Add volunteers!</a><br><br>
 
 <form class="delete_proj" action="index.html" method="post">
   <input name="_method" type="hidden" value="delete">

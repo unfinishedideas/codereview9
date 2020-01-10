@@ -4,6 +4,7 @@
   <% @projects.each do |project| %>
   <li>
     <h3 class="project_title"><%= project.title %><h4>
+      <a href="/projects/<%= project.id  %>/edit">Edit project</a>
       <h4>Volunteers:</h4>
       <% volunteers = project.volunteers %>
       <% if volunteers.any? %>
@@ -17,8 +18,7 @@
       <% else %>
       <p>There are currently no volunteers to display</p>
       <% end %>
-      <a href="/projects/<%= project.id  %>/add">Add volunteers!</a><br>
-      <a href="/projects/<%= project.id  %>/edit">Edit project</a>
+      <br>
     </li>
     <% end %>
   </ol>

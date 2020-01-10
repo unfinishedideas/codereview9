@@ -29,3 +29,17 @@ get('/projects/:id/edit') do
   @project = Project.find(params[:id])
   erb(:edit_project)
 end
+
+get('/projects/:id/add') do
+  @project = Project.find(params[:id])
+  erb(:add_volunteer)
+end
+
+post('/projects/:id/edit') do
+  name = params[:name]
+  project_id = params[:id]
+  @volunteer = Volunteer.new({:name => name, :id => nil, :project_id => project_id})
+  @project = Project.find(params[:id])
+  @volunteer.save()
+  erb(:edit_project)
+end
