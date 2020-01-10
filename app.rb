@@ -24,3 +24,8 @@ get('/projects') do
   @projects = Project.all
   erb(:view_projects)
 end
+
+get('/projects/:id/edit') do
+  @project = Project.find(params[:id])
+  erb(:edit_project)
+end
