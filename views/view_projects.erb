@@ -1,0 +1,23 @@
+<h2>Projects</h2>
+
+<ul>
+  <% @projects.each do |project| %>
+  <li>
+    <h3 class="project_title"><%= project.title %><h4>
+      <h4>Volunteers:</h4>
+      <% volunteers = project.volunteers %>
+      <% if volunteers.any? %>
+      <ol>
+        <% volunteers.each do |volunteer| %>
+        <li>
+          <a class="volunteer_link" href="/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a>
+        </li>
+      </ol>
+      <% end %>
+      <% else %>
+      <p>There are currently no volunteers to display</p>
+      <% end %>
+      <a href="/projects/add">Add volunteers!</a>
+    </li>
+  <% end %>
+</ul>
