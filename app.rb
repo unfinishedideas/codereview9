@@ -43,3 +43,10 @@ post('/projects/:id/edit') do
   @volunteer.save()
   erb(:edit_project)
 end
+
+delete('/projects/:id/edit') do
+  @project = Project.find(params[:id])
+  @project.delete()
+  @projects = Project.all
+  erb(:view_projects)
+end
