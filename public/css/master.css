@@ -30,6 +30,38 @@
   text-shadow: 2px 2px 2px black;
 }
 
+.project_title {
+  color: white;
+  margin-top: 0;
+  font-size: 30px;
+}
+.project_lister {
+  list-style-type: none;
+}
+.project_box {
+  border: 2px purple solid;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* grid-column-gap: 50px; */
+  /* background-color: blue; */
+  width: 100%;
+}
+
+.left_col {
+  background-color: red;
+  float: left;
+  width: 20%;
+}
+.right_col {
+  background-color: green;
+  float: left;
+  width: 80%;
+}
+
+.no_top_txt {
+    margin-top: 0;
+}
+
 body {
   background-color: rgb(20,20,20);
   color: rgb(255,150,0);
@@ -37,4 +69,8 @@ body {
 
 a {
   color: white;
+}
+
+li {
+  width: 100%;
 }

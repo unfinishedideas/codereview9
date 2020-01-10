@@ -1,26 +1,35 @@
 <h2>Projects</h2>
 
-<ol>
+<ol class="project_lister">
   <% @projects.each do |project| %>
   <li>
-    <h3 class="project_title"><%= project.title %><h4>
-      <a href="/projects/<%= project.id  %>/edit">Edit project</a>
-      <h4>Volunteers:</h4>
-      <% volunteers = project.volunteers %>
-      <% if volunteers.any? %>
-      <ul>
-        <% volunteers.each do |volunteer| %>
-        <li>
-          <a class="volunteer_link" href="/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a>
-        </li>
-      </ul>
-      <% end %>
-      <% else %>
-      <p>There are currently no volunteers to display</p>
-      <% end %>
-      <br>
+    <div class="project_box">
+
+      <div class="left_col">
+        <h3 class="project_title"><%= project.title %><h4>
+          <a href="/projects/<%= project.id  %>/edit">Edit</a>
+        </div>
+
+        <div class="right_col">
+          <p class="no_top_txt">Volunteers:</p>
+          <% volunteers = project.volunteers %>
+          <% if volunteers.any? %>
+          <ul>
+            <% volunteers.each do |volunteer| %>
+            <li>
+              <a class="volunteer_link" href="/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a>
+            </li>
+            <% end %>
+          </ul>
+          <% else %>
+          <p>There are currently no volunteers to display</p>
+          <% end %>
+          <br>
+          <% end %>
+        </div>
+
+      </div>
     </li>
-    <% end %>
   </ol>
 
-<a href="/">Back</a>
+  <a href="/">Back</a>
