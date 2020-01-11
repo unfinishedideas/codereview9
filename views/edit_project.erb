@@ -12,12 +12,9 @@
 <ul>
   <% volunteers.each do |volunteer| %>
   <li>
-    <a class="volunteer_link" href="/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a>
+    <a class="volunteer_link" href="/volunteers/<%= volunteer.id %>/edit"><%= volunteer.name %></a>
 
-    <form action="/projects/<%= @project.id %>" method="post">
-      <input name="_method" type="hidden" value="delete">
-      <button type="submit" name="button">Delete</button>
-    </form>
+
     <br>
   </li>
 <% end %>

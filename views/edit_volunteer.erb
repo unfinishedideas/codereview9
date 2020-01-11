@@ -1,0 +1,6 @@
+<h3>Volunteer: <%= @volunteer.name %></h3>
+
+<form action="/volunteers/<%= @volunteer.id %>/edit" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit" name="button">Delete <%= @volunteer.name %></button>
+</form> <br>
