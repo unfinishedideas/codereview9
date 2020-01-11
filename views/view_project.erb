@@ -6,7 +6,7 @@
 <ul>
   <% volunteers.each do |volunteer| %>
   <li>
-<p><%= volunteer.name %></p>
+    <p>Edit: <a class="volunteer_link" href="/volunteers/<%= volunteer.id %>/edit"><%= volunteer.name %></a></p>
     <br>
   </li>
   <% end %>

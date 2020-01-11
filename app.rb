@@ -67,14 +67,15 @@ delete('/projects/:id/edit') do
   @project = Project.find(params[:id])
   @project.delete()
   @projects = Project.all
-  erb(:view_projects)
+  erb(:homepage)
 end
 
 delete('/volunteers/:id/edit') do
   @volunteer = Volunteer.find(params[:id])
   @volunteer.delete()
   @volunteers = Volunteer.all
-  erb(:view_volunteers)
+  @projects = Project.all
+  erb(:homepage)
 end
 
 # ---------------PATCH-------------------- #
@@ -84,4 +85,13 @@ patch('/projects/:id/edit') do
   @project.update({:title => title})
   @projects = Project.all
   erb(:homepage)
+end
+
+patch('/volunteers/:id/edit') do
+  @volunteer = Volunteer.find(params[:id])
+  name = params[:name]
+  @volunteer.update({:name => name})
+  @volunteers = Volunteer.all
+  @project = Project.find(@volunteer.project_id)
+  erb(:view_project)
 end
