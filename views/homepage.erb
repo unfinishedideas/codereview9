@@ -1,12 +1,20 @@
 <h2>Home</h2>
 
-<form class="project_form" action="/projects" method="post">
+<form class="project_form" action="/" method="post">
   <label for="title">Name of Project:</label>
   <input type="text" name="title">
   <button type="submit" name="button">Create Project</button>
 </form>
 
-
+<h3>Current Projects</h3>
+<ol class="project_lister">
+  <% @projects.each do |project| %>
+  <li>
+    <a class="project_title" href="/projects/<%= project.id  %>"><%= project.title %></a>
+    <br>
+    <% end %>
+  </li>
+</ol>
 
 <a href="/projects">View Projects</a><br>
 <a href="/volunteers">View Volunteers</a><br>

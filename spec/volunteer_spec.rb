@@ -60,7 +60,7 @@ describe Volunteer do
 
   context '#delete' do
     it 'allows a user to delete a volunteer' do
-      volunteer = Volunteer.new({:name => 'Sammy Davis Jr', :id => nil})
+      volunteer = Volunteer.new({:name => 'Sammy Davis Jr', :id => nil, :project_id => 5})
       volunteer.save
       volunteer.delete
       expect(Volunteer.all).to eq []

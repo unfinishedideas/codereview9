@@ -7,8 +7,9 @@ require("pg")
 also_reload('lib/**/*.rb')
 
 DB = PG.connect({:dbname => "volunteer_tracker"})
-
+# ----------------GET--------------------- #
 get('/') do
+  @projects = Project.all
   erb(:homepage)
 end
 
@@ -32,19 +33,24 @@ get('/projects/:id/add') do
   erb(:add_volunteer)
 end
 
+get('/projects/:id') do
+  @project = Project.find(params[:id])
+  erb(:view_project)
+end
+
 get('/volunteers/:id/edit') do
   @volunteer = Volunteer.find(params[:id])
   erb(:edit_volunteer)
 end
 
 
-
-post('/projects') do
+# ----------------POST-------------------- #
+post('/') do
   title = params[:title]
   @project = Project.new({:title => title, :id => nil})
   @project.save
   @projects = Project.all
-  erb(:view_projects)
+  erb(:homepage)
 end
 
 post('/projects/:id/edit') do
@@ -56,8 +62,7 @@ post('/projects/:id/edit') do
   erb(:edit_project)
 end
 
-
-
+# ---------------DELETE------------------- #
 delete('/projects/:id/edit') do
   @project = Project.find(params[:id])
   @project.delete()
@@ -70,4 +75,13 @@ delete('/volunteers/:id/edit') do
   @volunteer.delete()
   @volunteers = Volunteer.all
   erb(:view_volunteers)
+end
+
+# ---------------PATCH-------------------- #
+patch('/projects/:id/edit') do
+  @project = Project.find(params[:id])
+  title = params[:title]
+  @project.update({:title => title})
+  @projects = Project.all
+  erb(:homepage)
 end
