@@ -1,4 +1,4 @@
-<h2>Editing Project: <%= @project.title %></h2>
+<h2 class="title_text">Editing Project: <%= @project.title %></h2>
 
 <form class="rename_proj" action="/projects/<%= @project.id %>/edit" method="post">
   <input name="_method" type="hidden" value="patch">

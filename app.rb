@@ -74,8 +74,8 @@ delete('/volunteers/:id/edit') do
   @volunteer = Volunteer.find(params[:id])
   @volunteer.delete()
   @volunteers = Volunteer.all
-  @projects = Project.all
-  erb(:homepage)
+  @project = Project.find(@volunteer.project_id)
+  erb(:view_project)
 end
 
 # ---------------PATCH-------------------- #

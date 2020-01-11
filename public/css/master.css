@@ -13,6 +13,12 @@
   border-radius: 10px;
 }
 
+.title_text {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  text-align: center
+}
+
 .container {
   padding: 5%;
   padding-left: 10%;
@@ -35,28 +41,7 @@
   margin-top: 0;
   font-size: 30px;
 }
-.project_lister {
-  list-style-type: none;
-}
-.project_box {
-  border: 2px purple solid;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  /* grid-column-gap: 50px; */
-  /* background-color: blue; */
-  width: 100%;
-}
 
-.left_col {
-  background-color: red;
-  float: left;
-  width: 20%;
-}
-.right_col {
-  background-color: green;
-  float: left;
-  width: 80%;
-}
 
 .no_top_txt {
     margin-top: 0;

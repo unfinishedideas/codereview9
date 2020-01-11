@@ -1,4 +1,4 @@
-<h3>Volunteer: <%= @volunteer.name %></h3>
+<h2 class="title_text">Volunteer: <%= @volunteer.name %></h2>
 
 <form action="/volunteers/<%= @volunteer.id %>/edit" method="post">
   <input name="_method" type="hidden" value="patch">
